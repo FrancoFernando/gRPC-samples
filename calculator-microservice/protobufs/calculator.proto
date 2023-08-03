@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+message AddRequest {
+    int32 op_1 = 1;
+    int32 op_2 = 2;
+}
+
+message AddResponse {
+    int32 ans = 1;
+}
+
+message SubRequest {
+    int32 op_1 = 1;
+    int32 op_2 = 2;
+}
+
+message SubResponse {
+    int32 ans = 1;
+}
+
+service Calculator {
+    rpc add (AddRequest) returns (AddResponse);
+    rpc sub (SubRequest) returns (SubResponse);
+}
